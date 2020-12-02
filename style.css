@@ -4,6 +4,10 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+.section-padding {
+    padding-top: 35px;
+    /* padding-bottom: 35px; */
+}
 /* header xs*/
 .header {
     background-color: #1d2126;
@@ -145,8 +149,6 @@ body {
 /* about xs*/
 .about {
     border-bottom: 1px solid #dde1e4;
-    padding-top: 35px;
-    padding-bottom: 35px;
 }
 .section-title {
     font-family: 'Quattrocento Sans', sans-serif;
@@ -239,10 +241,6 @@ body {
     margin-top: 10px;
 }
 /* team */
-.team {
-    padding-top: 35px;
-    padding-bottom: 35px;
-}
 .team-row {
     display: flex;
 }
@@ -300,6 +298,10 @@ body {
         order: 3;
     }
     /* slider min 992 */
+    .section-padding {
+        padding-top: 80px;
+        padding-bottom: 65px;
+    }
     .slider {
         height: 450px;
         display: flex;
@@ -321,10 +323,6 @@ body {
         margin-right: 11px;
     }
     /* about min 992 */
-    .about, .team {
-        padding-top: 80px;
-        padding-bottom: 65px;
-    }
     .section-title {
         font-size: 36px;
     }
