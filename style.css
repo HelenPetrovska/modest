@@ -245,10 +245,10 @@ body {
 }
 .team-row {
     display: flex;
-    flex-wrap: wrap;
 }
 .team-content {
     margin-bottom: 35px;
+    padding: 0 50px;
 }
 .team-item {
     background-color: #e1e6ea;
@@ -282,7 +282,12 @@ body {
     .about__our-goals {
         margin-top: 0;
     }
-      
+    .team-content {
+        padding: 0 15px;
+    }
+    .team-row {
+        flex-wrap: wrap;
+    }
 }
 
 /* laptop md*/
