@@ -249,14 +249,42 @@ body {
     padding: 0 50px;
 }
 .team-item {
-    background-color: #e1e6ea;
+    cursor: pointer;
 }
-.team-item__img {
+.team-item__image {
+    position: relative;
+}
+.team-item__image_hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team-item:hover .team-item__image .team-item__image_hover {
+    opacity: 1;
+}
+.team-item:hover .team-item__text {
+    background-color: #3a454d;
+}
+.team-item:hover .team-item__text>.team-item__title{
+    color: #e1e6ea;
+}
+.team-item:hover .team-item__text>p {
+    color: #e1e6ea;
+}
+.team-item-img {
     display: block;
     width: 100%;
 }
 .team-item__text {
     padding: 20px;
+    background-color: #e1e6ea;
 }
 .team-item__title {
     font-family: 'Quattrocento Sans', sans-serif;
@@ -270,6 +298,34 @@ body {
     font-size: 14px;
     margin-top: 7px;
 }
+.hover-social-list {
+    display: flex;
+    justify-content: center;
+}
+.hover-social-item {
+    margin-right: 1px;
+}
+.hover-social-link {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #3a454d;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hover-social-item:first-child>.hover-social-link {
+    background-image: url(images/fb-icon2.png);
+}
+.hover-social-item:nth-child(2)>.hover-social-link {
+    background-image: url(images/twitter-icon2.png);
+}
+.hover-social-item:nth-child(3)>.hover-social-link {
+    background-image: url(images/in-icon.png);
+}
+.hover-social-link:hover {
+    background-color: #4e5a62;
+}
+
 /* Адаптация */
 
 /* tablet sm*/
@@ -347,8 +403,6 @@ body {
        .team-row {
         margin-top: 60px;
     }
-
-
 }
 
 /* desctop lg*/
