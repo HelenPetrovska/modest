@@ -11,14 +11,17 @@ body {
 /* header xs*/
 .header {
     background-color: #1d2126;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .header-row {
     align-items: center;
 }
 .logo, .search {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .menu {
     order: 3;
@@ -136,7 +139,7 @@ body {
     font-family: 'Quattrocento Sans', sans-serif;
     color: #ffffff;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 39px;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -154,7 +157,7 @@ body {
     border-bottom: 1px solid #dde1e4;
 }
 .section-content {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 .section-title {
     font-family: 'Quattrocento Sans', sans-serif;
@@ -251,7 +254,6 @@ body {
 }
 .team-content, .work-content, .services-content, .features-content, .contact-content {
     margin-bottom: 35px;
-    padding: 0 35px;
 }
 .team-item {
     cursor: pointer;
@@ -450,11 +452,53 @@ body {
     line-height: 1.63;
     margin-top: 33px;
 }
+/* footer xs */
 .footer {
     height: 95px;
     background-color: #3a454d;
+    display: flex;
+    align-items: center;
 }
- 
+.footer-row {
+    display: flex;
+    justify-content: center;
+}
+.footer__social-list {
+    display: flex;
+    justify-content: center;
+} 
+.footer__social-link {
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 7px;
+}
+.footer__social-link:hover {
+    background-color: #4e5a62;
+}
+.footer__social-item:first-child>.footer__social-link {
+    background-image: url(images/twitter-icon3.png);
+}
+.footer__social-item:nth-child(2)>.footer__social-link {
+    background-image: url(images/fb-icon3.png);
+}
+.footer__social-item:nth-child(3)>.footer__social-link {
+    background-image: url(images/skype-icon.png);
+}
+.footer__social-item:nth-child(4)>.footer__social-link {
+    background-image: url(images/be-icon2.png);
+}
+.footer__social-item:nth-child(5)>.footer__social-link {
+    background-image: url(images/in-icon2.png);
+}
+.footer__copy {
+    color: #dcdfe1;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
 /* Адаптация */
 
 @media(min-width:375px) {
@@ -464,6 +508,7 @@ body {
 @media(min-width:768px) {
     .section-content {
         flex-direction: row;
+        flex-wrap: wrap;
     }
     .about__our-goals {
         margin-top: 0;
@@ -471,16 +516,29 @@ body {
     .team-content, .work-content, .features-content {
         padding: 0 15px;
     }
-    .team-row, .work-row, .services-row, .features-row {
-        flex-wrap: wrap;
-    }
     .work-hide {
         display: block;
+    }
+    .footer-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer__social {
+        order: 2;
+    }
+    .footer__copy {
+        font-size: 14px;
+        margin-top: 0;
     }
 }
 /* laptop md*/
 @media(min-width:992px) {
     /* header min 992 */
+    .header {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
     .logo, .search {
         margin-bottom: 0;
     }
@@ -564,6 +622,8 @@ body {
     .contact-item__text {
         font-size: 16px;
     }
+    /* footer min 992 */
+    
 }
 
 /* desctop lg*/
