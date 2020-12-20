@@ -462,6 +462,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    opacity: 0;
 }
 .contact-form-field {
     width: 45%;
