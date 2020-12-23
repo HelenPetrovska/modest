@@ -25,21 +25,52 @@ sendBtn.addEventListener("click", function() {
 // modal
 
 let modal = document.querySelector(".modal");
-let subscribeBtn =document.querySelector(".subscribe-btn");
+let subscribeBtn = document.querySelector(".subscribe-btn");
 
-window.addEventListener("scroll", function() {
-    if((window.pageYOffset>(document.body.scrollHeight/2)) && (window.pageYOffset<(document.body.scrollHeight/3*2)) ) {
-        modal.classList.add("show");
-        modal.classList.remove("hide");
-    }
-})
-subscribeBtn.addEventListener("click", function() {
+function openModal() {
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+}
+
+function closeModal(e) {
+    e.preventDefault();
     modal.classList.add("hide");
     modal.classList.remove("show");
+}
+
+modal.addEventListener("click", function(e) {
+    if(e.target === modal) {
+        closeModal(e);
+    }
 })
 
-console.log(document.body.scrollHeight/3*2)
-console.log(window.pageYOffset)
-console.log(modal)
+function showModalByScroll() {
+    if(window.pageYOffset > document.documentElement.scrollHeight/2) {
+        openModal();
+        window.removeEventListener("scroll", showModalByScroll);
+    }
+}
+window.addEventListener("scroll", showModalByScroll);
 
+subscribeBtn.addEventListener("click", closeModal);
+
+// не работает
+// window.addEventListener("scroll", showModalByScroll, {
+//     once:true,
+// })
+
+
+// mobile-menu
+
+let mobileMenu = document.querySelector(".nav-mobile-menu");
+let mainMenu = document.querySelector(".navigation");
+
+mobileMenu.addEventListener("click", function() {
+    mobileMenu.classList.toggle("active-menu");
+    if(mobileMenu.classList.contains("active-menu")) {
+        mainMenu.classList.add("active-menu");
+    } else {
+        mainMenu.classList.remove("active-menu");
+    }
+})
 
