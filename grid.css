@@ -15,6 +15,10 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.col-xs-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 .col-xs-12 {
     flex: 0 0 100%;
     max-width: 100%;

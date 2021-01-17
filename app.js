@@ -1,31 +1,33 @@
 // send-form
 
-let sendBtn = document.querySelector(".contact-btn");
-let sendForm = document.querySelector(".contact-form");
-sendBtn.classList.add("off");
+let contactBtn = document.querySelector(".contact-btn");
+let sendBtn = document.querySelector(".send-btn");
+let sendForm = document.querySelector(".form__body");
+let closeBtn = document.querySelector(".close-btn");
 
-function showSendForm () {
-    sendForm.style.opacity = "1";
-    sendBtn.classList.add("on");
-    sendBtn.classList.remove("off");
+function showSendForm() {
+    sendForm.style.display = "block";
+    contactBtn.classList.add("on");
+    contactBtn.style.display = "none";
 }
 
-function hideSendForm () {
-    sendForm.style.opacity = "0";
-    sendBtn.classList.add("off");
-    sendBtn.classList.remove("on");
+function hideSendForm() {
+    sendForm.style.display = "none";
+    contactBtn.classList.remove("on");
+    contactBtn.style.display = "block";
 }
 
-sendBtn.addEventListener("click", function() {
-    if (sendBtn.classList.contains("off")) {
-        showSendForm();
-    } else hideSendForm();
-})
+contactBtn.addEventListener("click", showSendForm);
+
+sendBtn.addEventListener("click", hideSendForm);
+
+closeBtn.addEventListener("click", hideSendForm);
 
 // modal
 
 let modal = document.querySelector(".modal");
 let subscribeBtn = document.querySelector(".subscribe-btn");
+let subscribeCloseBtn = document.querySelector(".subscribe-close-btn");
 
 function openModal() {
     modal.classList.add("show");
@@ -54,11 +56,7 @@ window.addEventListener("scroll", showModalByScroll);
 
 subscribeBtn.addEventListener("click", closeModal);
 
-// не работает
-// window.addEventListener("scroll", showModalByScroll, {
-//     once:true,
-// })
-
+subscribeCloseBtn.addEventListener("click", closeModal);
 
 // mobile-menu
 
